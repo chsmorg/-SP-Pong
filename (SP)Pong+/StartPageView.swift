@@ -43,7 +43,6 @@ struct StartPageView: View {
                        states.addPlayer(player: player)
                     change = true
                        
-                        
                     }
                     
                 
