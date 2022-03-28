@@ -37,7 +37,6 @@ struct AnimationView: View {
                         c1p = move(theta: thetaC1, point: c1p, d: 1)
                     }
                     thetaC1 += step
-                    
                 }
             c2.fill(.radialGradient(Gradient(colors: [.green, .white]), center: .center, startRadius: 5, endRadius: 20))
                 .frame(width: 25, height: 25)

@@ -12,6 +12,7 @@ class ConnectedPlayer{
     var name: String
     var wins: Int = 0
     var streak: Int = 0
+    
     //var socket
     var host: Bool = false
     var connected = false

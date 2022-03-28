@@ -17,6 +17,7 @@ struct GameLobbyView: View {
                 ScrollView([], showsIndicators: false){
                     ForEach(0...states.playerList.count-1, id: \.self) { index in
                         Player(player: states.playerList[index])
+                        
                     }
                 }
                 

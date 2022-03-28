@@ -52,6 +52,7 @@ struct StartPageView: View {
                         .foregroundColor(.black)
                         .background(RoundedRectangle(cornerRadius: 15).frame(width: UIScreen.main.bounds.width/3).foregroundColor(validName ? .green: .red))
                         .cornerRadius(15)
+                    
                        
                 }).padding()
                 NavigationLink(destination: GameLobbyView(states: states), isActive: $change) {
