@@ -25,7 +25,6 @@ class States: ObservableObject {
     @Published var difficulty: Int = 1
     @Published var connected: Int = 0
     
-    
     init(player: ConnectedPlayer){
         self.player = player
     }
