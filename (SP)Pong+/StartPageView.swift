@@ -44,8 +44,6 @@ struct StartPageView: View {
                     change = true
                        
                     }
-                    
-                
                 },label: {
                     Text("Start").padding()
                         .foregroundColor(.black)
