@@ -19,7 +19,6 @@ struct GameLobbyView: View {
                         Player(player: states.playerList[index])
                     }
                 }
-                
                 Divider()
                 GameOptions(states: states, player: states.player).padding()
                // BotOptions(states: states)

@@ -29,7 +29,6 @@ class States: ObservableObject {
         self.player = player
     }
     
-    
     func reset(){
         self.player1Score = 0
         self.player2Score = 0

@@ -25,7 +25,6 @@ class ConnectedPlayer{
         self.isBot.toggle()
     }
     
-    
 
 }
 

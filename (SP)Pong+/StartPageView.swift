@@ -55,8 +55,8 @@ struct StartPageView: View {
                        
                 }).padding()
                 NavigationLink(destination: GameLobbyView(states: states), isActive: $change) {
-                                   EmptyView()
-                               }
+                        EmptyView()
+                }
                 Spacer()
             
             }.background(.radialGradient(Gradient(colors: [.indigo, .blue, .purple]), center: .center, startRadius: 50, endRadius: 500))
