@@ -84,7 +84,6 @@
 		ABC96BCD27F21C8A00B861ED = {
 			isa = PBXGroup;
 			children = (
-				ABC96C0927F23B6900B861ED /* GameLobbyView.swift */,
 				ABC96C0B27F23BA500B861ED /* States.swift */,
 				ABC96C0727F23ADD00B861ED /* Player.swift */,
 				ABC96BD827F21C8A00B861ED /* (SP)Pong+ */,
@@ -108,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				ABC96BD927F21C8A00B861ED /* _SP_Pong_App.swift */,
+				ABC96C0927F23B6900B861ED /* GameLobbyView.swift */,
 				ABC96BDB27F21C8A00B861ED /* ContentView.swift */,
 				ABC96C0327F21CA200B861ED /* StartPageView.swift */,
 				ABC96C0527F2296E00B861ED /* AnimationView.swift */,
