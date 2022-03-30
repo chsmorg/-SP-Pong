@@ -17,6 +17,7 @@ class States: ObservableObject {
     @Published var rounds: Int = 5
     @Published var connected: Int = 0
     
+    
     init(player: ConnectedPlayer){
         self.player = player
     }
@@ -28,6 +29,9 @@ class States: ObservableObject {
     }
     func addPlayer(player: ConnectedPlayer){
         self.playerList.append(player)
+    }
+    func removePlayer(player: Int){
+        self.playerList.remove(at: player-1)
     }
     
 }
