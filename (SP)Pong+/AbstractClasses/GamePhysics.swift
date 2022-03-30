@@ -21,6 +21,16 @@ class Physics: ObservableObject{
         self.player = player
     }
     
+    func findDirection(ball: CGPoint, bot: CGPoint) -> simd_float2{
+        let p1 = bot
+        let p2 = ball
+        let delta = simd_float2(x: Float(p2.x - p1.x), y: Float(p2.y - p1.y))
+        let d  =  simd_normalize(delta)
+        
+        return d
+        
+    }
+    
     
     func update(){
         if(!states.roundEnd && !states.gameEnd){
@@ -29,12 +39,12 @@ class Physics: ObservableObject{
         }
         else{player.position = self.player.startingPosition}
     }
-    
-    
     func updateBall(bounds: CGRect){
+        let p = self.states.ballPosition
             withAnimation{
                 redGoalCollision(bounds: bounds)
                 greenGoalCollision(bounds: bounds)
+                if(p.y>bounds.height || p.y < 0 || p.x < 0 || p.x > bounds.width){states.ballPosition = CGPoint(x: bounds.width/2, y: bounds.height/2)}
                 if(!states.roundEnd){
                     wallCollisionCheck(bounds: bounds)
                     states.ballPosition.x += Double(self.states.ballVelocity.x)
