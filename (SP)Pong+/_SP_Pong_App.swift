@@ -11,7 +11,7 @@ import SwiftUI
 struct _SP_Pong_App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartPageView()
         }
     }
 }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		ABC96BDA27F21C8A00B861ED /* _SP_Pong_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC96BD927F21C8A00B861ED /* _SP_Pong_App.swift */; };
-		ABC96BDC27F21C8A00B861ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC96BDB27F21C8A00B861ED /* ContentView.swift */; };
 		ABC96BDE27F21C8B00B861ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABC96BDD27F21C8B00B861ED /* Assets.xcassets */; };
 		ABC96BE127F21C8B00B861ED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABC96BE027F21C8B00B861ED /* Preview Assets.xcassets */; };
 		ABC96BEB27F21C8B00B861ED /* _SP_Pong_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC96BEA27F21C8B00B861ED /* _SP_Pong_Tests.swift */; };
@@ -43,7 +42,6 @@
 /* Begin PBXFileReference section */
 		ABC96BD627F21C8A00B861ED /* (SP)Pong+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "(SP)Pong+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABC96BD927F21C8A00B861ED /* _SP_Pong_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _SP_Pong_App.swift; sourceTree = "<group>"; };
-		ABC96BDB27F21C8A00B861ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ABC96BDD27F21C8B00B861ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABC96BE027F21C8B00B861ED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ABC96BE627F21C8B00B861ED /* (SP)Pong+Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "(SP)Pong+Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,7 +111,6 @@
 				ABE91E3E27F3E1C30047D600 /* StartPageViews */,
 				ABE91E3C27F3E17E0047D600 /* LobbyViews */,
 				ABC96BD927F21C8A00B861ED /* _SP_Pong_App.swift */,
-				ABC96BDB27F21C8A00B861ED /* ContentView.swift */,
 				ABC96BDD27F21C8B00B861ED /* Assets.xcassets */,
 				ABC96BDF27F21C8B00B861ED /* Preview Content */,
 			);
@@ -299,7 +296,6 @@
 				ABC96C0C27F23BA500B861ED /* States.swift in Sources */,
 				ABE91E3B27F3E1030047D600 /* GameOptionsView.swift in Sources */,
 				ABE91E3927F3E05F0047D600 /* PlayerView.swift in Sources */,
-				ABC96BDC27F21C8A00B861ED /* ContentView.swift in Sources */,
 				ABC96C0A27F23B6900B861ED /* GameLobbyView.swift in Sources */,
 				ABC96C0827F23ADD00B861ED /* Player.swift in Sources */,
 				ABC96BDA27F21C8A00B861ED /* _SP_Pong_App.swift in Sources */,
