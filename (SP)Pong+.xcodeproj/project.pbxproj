@@ -104,9 +104,6 @@
 		ABC96BCD27F21C8A00B861ED = {
 			isa = PBXGroup;
 			children = (
-				ABC96C0B27F23BA500B861ED /* States.swift */,
-				ABC96C0727F23ADD00B861ED /* Player.swift */,
-				ABE91E5827F43D670047D600 /* GameSprites */,
 				ABC96BD927F21C8A00B861ED /* _SP_Pong_App.swift */,
 				ABC96BD827F21C8A00B861ED /* (SP)Pong+ */,
 				ABC96BE927F21C8B00B861ED /* (SP)Pong+Tests */,
@@ -128,6 +125,8 @@
 		ABC96BD827F21C8A00B861ED /* (SP)Pong+ */ = {
 			isa = PBXGroup;
 			children = (
+				ABE91E5927F43DF90047D600 /* AbstractClasses */,
+				ABE91E5827F43D670047D600 /* GameSprites */,
 				ABE91E3F27F3F3130047D600 /* GameViews */,
 				ABE91E3E27F3E1C30047D600 /* StartPageViews */,
 				ABE91E3C27F3E17E0047D600 /* LobbyViews */,
@@ -218,6 +217,15 @@
 				ABE91E5227F3FC5F0047D600 /* PlayerSprite.swift */,
 			);
 			path = GameSprites;
+			sourceTree = "<group>";
+		};
+		ABE91E5927F43DF90047D600 /* AbstractClasses */ = {
+			isa = PBXGroup;
+			children = (
+				ABC96C0B27F23BA500B861ED /* States.swift */,
+				ABC96C0727F23ADD00B861ED /* Player.swift */,
+			);
+			path = AbstractClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
