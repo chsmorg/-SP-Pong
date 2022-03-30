@@ -21,8 +21,8 @@ private let player2GoalPosition = CGPoint(x: bounds.width/2, y: 70)
 
 struct GameView: View {
     @ObservedObject var states: States
-    @State var roundTimer = 120
     @State var timerText  = 3
+    @State var roundTimer = 120
     @Environment(\.presentationMode) var presentationMode
     
    
@@ -61,13 +61,14 @@ struct GameView: View {
         }.background(.radialGradient(Gradient(colors: [.indigo, .blue, .purple]), center: .center, startRadius: 50, endRadius: 500)).onReceive(self.states.timer){ _ in
             if(self.states.roundEnd){
                 if(self.states.gameEnd){self.presentationMode.wrappedValue.dismiss()}
-                roundTimer -= 1
-                timerText = Int(roundTimer/40)+1
-                if(roundTimer <= 0){
+                self.roundTimer -= 1
+                timerText = Int(self.roundTimer/40)+1
+                if(self.roundTimer <= 0){
                     states.newRound()
-                    roundTimer = 120
+                    
                 }
             }
+            else{self.roundTimer = 120}
         }
     }
 }

@@ -33,6 +33,13 @@ class ConnectedPlayer: ObservableObject{
     init(name: String){
         self.name = name
     }
+    func reset(){
+        self.velocity = simd_float2(x: 0, y: 0)
+        self.position = self.startingPosition
+        self.lastPosition = self.startingPosition
+        self.collision = false
+        self.colTimer = false
+    }
     func setBot(){
         self.isBot.toggle()
         self.ready.toggle()
@@ -62,9 +69,6 @@ class ConnectedPlayer: ObservableObject{
             self.streak = 0
             self.score = 0
         }
-    }
-    func resetScore(){
-        self.score = 0
     }
     func setStartingPositioning(point: CGPoint){
         self.startingPosition = point

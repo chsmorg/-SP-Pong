@@ -30,11 +30,9 @@ class States: ObservableObject {
     init(player: ConnectedPlayer){
         self.player = player
     }
-    
     func reset(){
         self.gameEnd = false
         self.roundEnd = false
-        
     }
     func addPlayer(player: ConnectedPlayer){
         self.playerList.append(player)
@@ -45,13 +43,14 @@ class States: ObservableObject {
     func newRound(){
         self.roundEnd = false
     }
+    
+    
     func resetReady(){
         for p in self.playerList{
             if(p.isBot && p.player == 1){p.setBot()}
             else if !p.isBot {p.setReady()}
         }
     }
-    
     func endRound(scored: Int){
         self.roundEnd = true
         self.ballVelocity = simd_float2(x: 0, y: 0)
@@ -59,6 +58,7 @@ class States: ObservableObject {
             if(p.player == scored){
                 p.scored()
             }
+            p.reset()
         }
     }
     func endGame(winner: Int){

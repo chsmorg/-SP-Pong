@@ -22,10 +22,10 @@ struct PlayerSprite: View {
                 .onChanged { value in
                         
                     if(!states.roundEnd){
-                       // if(value.location.y > side){
+                       if(value.location.y > side){
                             self.player.lastPosition = self.player.position
                             self.player.position = value.location
-                       // }
+                        }
                     }
                 }
             }
@@ -64,22 +64,36 @@ struct PlayerSprite: View {
         let b = simd_double2(x: (self.player.position.x), y: (self.player.position.y))
         let d = simd_distance(a, b)
         let s = d/0.05
-        return simd_float2(x: Float(s/d*(player.position.x - player.lastPosition.x)),
-                                     y: Float(s/d*(player.position.y - player.lastPosition.y)))
+        let v = simd_float2(x: Float(s/d*(player.position.x - player.lastPosition.x)),
+                            y: Float(s/d*(player.position.y - player.lastPosition.y)))
+        if(!v.x.isNaN && !v.y.isNaN){
+            return v
+        }
+        return self.player.velocity
 
     }
+//    func checkCollision(ballPosition: CGPoint) -> Bool{
+//        var collision: Bool
+//            if (abs(Float(self.player.position.x - ballPosition.x)) < 60 && (abs(Float(self.player.position.y - ballPosition.y)) <
+//              60)){
+//                collision = true
+//             } else {
+//                 collision = false
+//                 self.colTimer = false
+//
+//             }
+//        return collision
+//    }
     func checkCollision(ballPosition: CGPoint) -> Bool{
-        var collision: Bool
-            if (abs(Float(self.player.position.x - ballPosition.x)) < 60 && (abs(Float(self.player.position.y - ballPosition.y)) <
-              60)){
-                collision = true
-             } else {
-                 collision = false
-                 self.colTimer = false
-                 
-             }
-        return collision
+        let dx = (self.player.position.x + 30) - (ballPosition.x + 30);
+        let dy = (self.player.position.y + 30) - (ballPosition.y + 30);
+        let distance = sqrt(dx*dx + dy*dy)
+        if(distance<60){ return true }
+        self.colTimer = false
+        return false
+        
     }
+    
     
     func resolveCollision(){
         var delta = simd_float2(x: Float(self.player.position.x - self.states.ballPosition.x), y: Float(self.player.position.y - self.states.ballPosition.y));

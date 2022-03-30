@@ -34,9 +34,9 @@ struct BallSprite: View {
                 greenGoalCollision()
                 if(!states.roundEnd){
                     wallCollisionCheck()
-                    states.ballPosition.x += Double(states.ballVelocity.x)
-                    states.ballPosition.y += Double(states.ballVelocity.y)
-                    states.ballVelocity = states.ballVelocity * states.res
+                    states.ballPosition.x += Double(self.states.ballVelocity.x)
+                    states.ballPosition.y += Double(self.states.ballVelocity.y)
+                    states.ballVelocity = self.states.ballVelocity * self.states.res
                 }
         }
     }
@@ -72,8 +72,9 @@ struct BallSprite: View {
         if (abs(Float(player2GoalPosition.x - self.states.ballPosition.x)) < 120 && (abs(Float(player2GoalPosition.y - self.states.ballPosition.y)) <
           20)){
            
-            states.ballPosition = CGPoint(x: bounds.width/2, y: bounds.height/2.5)
-            states.endRound(scored: 1)
+             states.ballPosition = CGPoint(x: bounds.width/2, y: bounds.height/2.5)
+             states.endRound(scored: 1)
+             
             
     
             if(states.playerList[0].score == states.rounds){
