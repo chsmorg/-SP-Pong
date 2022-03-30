@@ -15,21 +15,21 @@ struct ScoreCounterLayOut: View {
             if rounds <= 5 {
                 VStack(spacing: 3){
                     ForEach(1...rounds, id: \.self){num in
-                        ScoreCounterDot(ballNum: num, player: player, color : .green)
+                        ScoreCounterDot(ballNum: num, player: player, color : self.player.player == 1 ? .green : .red)
                     }
                 }.padding()
             }
             else {
                 VStack(spacing: 3){
                     ForEach(1...5, id: \.self){num in
-                        ScoreCounterDot(ballNum: num, player: player, color : .green)
+                        ScoreCounterDot(ballNum: num, player: player, color : self.player.player == 1 ? .green : .red)
                     }
-                }.padding(.leading)
+                }.padding(self.player.player == 1 ? .leading : .bottom)
                 VStack(spacing: 3){
                     ForEach(6...rounds, id: \.self){num in
-                        ScoreCounterDot(ballNum: num, player: player, color : .green)
+                        ScoreCounterDot(ballNum: num, player: player, color : self.player.player == 1 ? .green : .red)
                     }
-                }
+                }.padding(self.player.player == 2 ? .trailing : .bottom)
             }
         }
     }

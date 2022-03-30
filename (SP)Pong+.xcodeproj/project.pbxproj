@@ -106,9 +106,7 @@
 			children = (
 				ABC96C0B27F23BA500B861ED /* States.swift */,
 				ABC96C0727F23ADD00B861ED /* Player.swift */,
-				ABE91E5227F3FC5F0047D600 /* PlayerSprite.swift */,
-				ABE91E5427F3FDB00047D600 /* BotSprite.swift */,
-				ABE91E5627F405F90047D600 /* BallSprite.swift */,
+				ABE91E5827F43D670047D600 /* GameSprites */,
 				ABC96BD927F21C8A00B861ED /* _SP_Pong_App.swift */,
 				ABC96BD827F21C8A00B861ED /* (SP)Pong+ */,
 				ABC96BE927F21C8B00B861ED /* (SP)Pong+Tests */,
@@ -210,6 +208,16 @@
 				ABE91E4D27F3F64A0047D600 /* ScoreCounterDot.swift */,
 			);
 			path = ScoreCounter;
+			sourceTree = "<group>";
+		};
+		ABE91E5827F43D670047D600 /* GameSprites */ = {
+			isa = PBXGroup;
+			children = (
+				ABE91E5627F405F90047D600 /* BallSprite.swift */,
+				ABE91E5427F3FDB00047D600 /* BotSprite.swift */,
+				ABE91E5227F3FC5F0047D600 /* PlayerSprite.swift */,
+			);
+			path = GameSprites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

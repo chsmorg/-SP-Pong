@@ -24,7 +24,7 @@ class ConnectedPlayer: ObservableObject{
     //player positioning
     @Published var startingPosition = CGPoint(x: 0, y: 0)
     @Published var position = CGPoint(x: 0, y: 0)
-    @Published var playerLastPosition = CGPoint(x: 0, y: 0)
+    @Published var lastPosition = CGPoint(x: 0, y: 0)
     //player physics
     @Published var velocity = simd_float2(x: 0, y: 0)
     @Published var collision = false
@@ -35,7 +35,7 @@ class ConnectedPlayer: ObservableObject{
     }
     func setBot(){
         self.isBot.toggle()
-        self.ready = true
+        self.ready.toggle()
     }
     func setReady(){
         self.ready.toggle()
@@ -56,9 +56,11 @@ class ConnectedPlayer: ObservableObject{
         if win{
             self.wins+=1
             self.streak+=1
+            self.score = 0
         }
         else{
             self.streak = 0
+            self.score = 0
         }
     }
     func resetScore(){
@@ -67,7 +69,7 @@ class ConnectedPlayer: ObservableObject{
     func setStartingPositioning(point: CGPoint){
         self.startingPosition = point
         self.position = point
-        self.playerLastPosition = point
+        self.lastPosition = point
     }
     
 

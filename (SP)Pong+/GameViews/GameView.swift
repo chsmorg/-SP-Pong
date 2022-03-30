@@ -15,15 +15,15 @@ private let player2Start = CGPoint(x: bounds.width/2, y: 200)
 private var ballStart = CGPoint(x: bounds.width/2, y: bounds.height/2)
 private let player1GoalPosition = CGPoint(x: bounds.width/2, y: bounds.height-70)
 private let player2GoalPosition = CGPoint(x: bounds.width/2, y: 70)
-private let resetV = simd_float2(x: 0, y: 0)
 
 
 
 
 struct GameView: View {
     @ObservedObject var states: States
-    @State var roundTimer = 60
+    @State var roundTimer = 120
     @State var timerText  = 3
+    @Environment(\.presentationMode) var presentationMode
     
    
     var body: some View{
@@ -38,14 +38,18 @@ struct GameView: View {
                  .position(x: bounds.width/2, y: bounds.height/2)
             
             if(states.playerList[0].isBot){
-                BotSprite()
+                BotSprite(states: states, bot: states.playerList[0])
             }
             else{
                 PlayerSprite(states: states, player: states.playerList[0])
             }
+            
+            BotSprite(states: states, bot: states.playerList[1])
             BallSprite(states: states)
             
             Text(String(timerText)).opacity(self.states.roundEnd ? 1 : 0).font(Font.system(size: 40).monospacedDigit()).padding().position(x: bounds.width/2, y: bounds.height/2).foregroundColor(.white)
+            
+            
     
         }.navigationBarBackButtonHidden(true)
             .navigationBarTitle("")
@@ -53,13 +57,15 @@ struct GameView: View {
             .onAppear(){
             states.playerList[0].setStartingPositioning(point: player1Start)
             states.playerList[1].setStartingPositioning(point: player2Start)
+                states.roundEnd = true
         }.background(.radialGradient(Gradient(colors: [.indigo, .blue, .purple]), center: .center, startRadius: 50, endRadius: 500)).onReceive(self.states.timer){ _ in
             if(self.states.roundEnd){
+                if(self.states.gameEnd){self.presentationMode.wrappedValue.dismiss()}
                 roundTimer -= 1
-                timerText = Int(roundTimer/20)+1
+                timerText = Int(roundTimer/40)+1
                 if(roundTimer <= 0){
                     states.newRound()
-                    roundTimer = 60
+                    roundTimer = 120
                 }
             }
         }

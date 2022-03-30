@@ -12,6 +12,7 @@ struct PlayerSprite: View {
     let bounds = UIScreen.main.bounds
     @ObservedObject var states: States
     @ObservedObject var player: ConnectedPlayer
+    
     @State var colTimer = false
     
     @State var side:CGFloat = 0
@@ -21,10 +22,10 @@ struct PlayerSprite: View {
                 .onChanged { value in
                         
                     if(!states.roundEnd){
-                        if(value.location.y > side){
-                            self.player.playerLastPosition = self.player.position
+                       // if(value.location.y > side){
+                            self.player.lastPosition = self.player.position
                             self.player.position = value.location
-                        }
+                       // }
                     }
                 }
             }
@@ -59,12 +60,12 @@ struct PlayerSprite: View {
         
     }
     func calcPlayerVelocity() -> simd_float2{
-        let a = simd_double2(x: (self.player.playerLastPosition.x), y: (self.player.playerLastPosition.y))
+        let a = simd_double2(x: (self.player.lastPosition.x), y: (self.player.lastPosition.y))
         let b = simd_double2(x: (self.player.position.x), y: (self.player.position.y))
         let d = simd_distance(a, b)
         let s = d/0.05
-        return simd_float2(x: Float(s/d*(player.position.x - player.playerLastPosition.x)),
-                                     y: Float(s/d*(player.position.y - player.playerLastPosition.y)))
+        return simd_float2(x: Float(s/d*(player.position.x - player.lastPosition.x)),
+                                     y: Float(s/d*(player.position.y - player.lastPosition.y)))
 
     }
     func checkCollision(ballPosition: CGPoint) -> Bool{
