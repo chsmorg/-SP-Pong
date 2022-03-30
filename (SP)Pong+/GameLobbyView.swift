@@ -21,7 +21,6 @@ struct GameLobbyView: View {
                 }
                 Divider()
                 GameOptions(states: states, player: states.player).padding()
-               // BotOptions(states: states)
                 
                 
             }.background(.radialGradient(Gradient(colors: [.indigo, .blue, .purple]), center: .center, startRadius: 50, endRadius: 500))
@@ -57,15 +56,14 @@ struct GameLobbyView: View {
 }
 
 struct Player: View {
-    @State var player: ConnectedPlayer
+    @ObservedObject var player: ConnectedPlayer
     @State var color = Color(.green)
     @State var ballColor = Color(.green)
     @State var dif = "Easy"
-    @State var ready = false
     var body: some View{
         HStack{
             VStack{
-                Text(player.name.capitalized).padding().font(.system(size: 15, design: .rounded)).foregroundColor(self.ready ? .green: .white)
+                Text(player.name.capitalized).padding().font(.system(size: 15, design: .rounded)).foregroundColor(self.player.ready ? .green: .white)
                 Circle().fill(.radialGradient(Gradient(colors: [self.player.player == 1 ? .green : .red, .white]), center: .center, startRadius: 2, endRadius: 25))
                     .frame(width: 30, height: 30)
             }
@@ -78,10 +76,7 @@ struct Player: View {
                 }
                 ZStack{
                     Button(action: {
-                        self.player.difficulty += 1
-                        if(self.player.difficulty > 3){
-                            self.player.difficulty = 1
-                        }
+                        player.setDif()
                         switch self.player.difficulty{
                         case 1:
                             color = Color(.green)
@@ -104,11 +99,11 @@ struct Player: View {
                     }).opacity(self.player.isBot ? 1 : 0)
                     
                     Button(action: {
-                        self.ready.toggle()
+                        player.setReady()
                     
                     },label: {
                         Text("Ready").padding()
-                            .foregroundColor(self.ready ? .green: .red)
+                            .foregroundColor(self.player.ready ? .green: .red)
                             .cornerRadius(15)
                             .font(.system(size: 15))
                            
@@ -127,12 +122,7 @@ struct Player: View {
             
                 .font(.system(size: 15, design: .rounded)).foregroundColor(.black)
         }.padding().background(RoundedRectangle(cornerRadius: 20).fill(.quaternary).frame(width: UIScreen.main.bounds.width-50, height: UIScreen.main.bounds.height/9))
-            .onAppear(){
-                if(self.player.isBot){
-                    self.ready = true
-                }
-                }
-            }
+                    }
     
 }
 
@@ -167,33 +157,6 @@ struct GameOptions: View{
             
     }
     
-}
-
-struct BotOptions: View{
-    @State var difficulty: Double = 1
-    @State var states: States
-    var body: some View{
-        VStack{
-            Divider()
-            Text("Cpu Settings:").font(.system(size: 20))
-            Slider(value: $difficulty, in: 1...4).accentColor(.green).padding().onChange(of: difficulty){
-                num in
-                states.difficulty = Int(difficulty)
-            }
-            Text("Difficulty:").font(.system(size: 20))
-            switch Int(states.difficulty){
-            case 1:
-                Text("Easy").font(.system(size: 20))
-            case 2:
-                Text("Medium").font(.system(size: 20))
-            default:
-                Text("Hard").font(.system(size: 20))
-            }
-        }.onAppear(){
-            difficulty = Double(states.difficulty)
-        
-    }
-}
 }
 
 
