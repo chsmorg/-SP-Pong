@@ -9,13 +9,13 @@ import SwiftUI
 let b = UIScreen.main.bounds
 let c1Start = CGPoint(x: b.width/3.25 , y: b.height/3.33 - b.height/7)
 let  c2Start = CGPoint(x: b.width/3.25 , y: b.height/3.33 + b.height/7)
-let  ballStart = CGPoint(x: b.width/3.25 , y: b.height/3.3)
+
 
 struct AnimationView: View {
    @State var c1 = Circle()
    @State var c2 = Circle()
    @State var ball = Circle()
-    @State var thetaC1 = 0.0
+@State var thetaC1 = 0.0
    @State var thetaC2 = 0.0
    @State var c1p = c1Start
    @State var c2p = c2Start
@@ -48,14 +48,6 @@ struct AnimationView: View {
                     thetaC2 += step
                     
                 }
-//            ball.fill(.radialGradient(Gradient(colors: [.black, .gray]), center: .center, startRadius: 5, endRadius: 20))
-//                .frame(width: 25, height: 25)
-//                .position(ballStart)
-//                
-            
-            
-            
-            
         }
     }
     

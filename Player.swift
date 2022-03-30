@@ -12,6 +12,7 @@ class ConnectedPlayer: ObservableObject{
     var name: String
     @Published var wins: Int = 0
     @Published var streak: Int = 0
+    @Published var score: Int = 0
     @Published var host: Bool = false
     @Published var connected = false
     @Published var player: Int = 1
@@ -38,6 +39,9 @@ class ConnectedPlayer: ObservableObject{
             self.difficulty = 1
         }
     }
+    func scored(){
+        self.score+=1
+    }
     func gameWon(win:Bool){
         if win{
             self.wins+=1
@@ -46,6 +50,9 @@ class ConnectedPlayer: ObservableObject{
         else{
             self.streak = 0
         }
+    }
+    func resetScore(){
+        self.score = 0
     }
     
 
