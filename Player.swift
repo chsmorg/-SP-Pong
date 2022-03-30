@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import AVFoundation
 
 class ConnectedPlayer: ObservableObject{
     
@@ -24,6 +25,10 @@ class ConnectedPlayer: ObservableObject{
     @Published var startingPosition = CGPoint(x: 0, y: 0)
     @Published var position = CGPoint(x: 0, y: 0)
     @Published var playerLastPosition = CGPoint(x: 0, y: 0)
+    //player physics
+    @Published var velocity = simd_float2(x: 0, y: 0)
+    @Published var collision = false
+    @Published var colTimer = false
     
     init(name: String){
         self.name = name

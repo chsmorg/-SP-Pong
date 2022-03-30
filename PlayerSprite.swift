@@ -12,9 +12,8 @@ struct PlayerSprite: View {
     let bounds = UIScreen.main.bounds
     @ObservedObject var states: States
     @ObservedObject var player: ConnectedPlayer
-    @State var collision = false
     @State var colTimer = false
-    @State var playerVelocity = simd_float2(x: 0, y: 0)
+    
     @State var side:CGFloat = 0
     
     var simpleDrag: some Gesture {
@@ -45,6 +44,17 @@ struct PlayerSprite: View {
                 else{
                     side = bounds.height/2-30
                 }
+            }.onReceive(self.states.timer){ _ in
+                if(!states.roundEnd && !states.gameEnd){
+                    player.velocity = calcPlayerVelocity()
+                    if (checkCollision(ballPosition: self.states.ballPosition) && !colTimer){
+                        resolveCollision()
+                        self.colTimer = true
+                    }
+                }
+                else{
+                    player.position = self.player.startingPosition
+                }
             }
         
     }
@@ -64,10 +74,47 @@ struct PlayerSprite: View {
                 collision = true
              } else {
                  collision = false
+                 self.colTimer = false
                  
              }
         return collision
     }
+    
+    func resolveCollision(){
+        var delta = simd_float2(x: Float(self.player.position.x - self.states.ballPosition.x), y: Float(self.player.position.y - self.states.ballPosition.y));
+        var d = simd_length(delta)
+        var mtd: simd_float2
+        if(d != 0){
+            mtd = delta*((60-d)/d)
+        }
+        else{
+            d = 59.0
+            delta = simd_float2(60.0, 0.0);
+            mtd = delta*((60-d)/d);
+        }
+    
+        let v = self.states.ballVelocity-self.player.velocity
+        let vn = simd_dot(v,simd_normalize(mtd))
+        let i = -(1.0+self.states.res) * vn/0.4
+        
+        let impulse = mtd * i
+        var newV = self.states.ballVelocity + (impulse*0.2)
+        if(newV.x > Float(self.states.ballSpeed)){
+            newV.x = Float(self.states.ballSpeed)
+        }
+        if(newV.y > Float(self.states.ballSpeed)){
+            newV.y = Float(self.states.ballSpeed)
+        }
+        if(newV.x < Float(self.states.ballSpeed) * -1){
+            newV.x = Float(self.states.ballSpeed) * -1
+        }
+        if(newV.y < Float(self.states.ballSpeed) * -1){
+            newV.y = Float(self.states.ballSpeed) * -1
+    
+        }
+        states.ballVelocity = newV
+    }
+
     
 }
 

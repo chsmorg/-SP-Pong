@@ -13,8 +13,3 @@ struct BotSprite: View {
     }
 }
 
-struct BotSprite_Previews: PreviewProvider {
-    static var previews: some View {
-        BotSprite()
-    }
-}

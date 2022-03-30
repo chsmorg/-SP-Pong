@@ -12,7 +12,7 @@ struct ScoreCounterLayOut: View {
     @State var rounds: Int
     var body: some View {
         HStack{
-            if rounds < 5 {
+            if rounds <= 5 {
                 VStack(spacing: 3){
                     ForEach(1...rounds, id: \.self){num in
                         ScoreCounterDot(ballNum: num, player: player, color : .green)

@@ -22,6 +22,9 @@ private let resetV = simd_float2(x: 0, y: 0)
 
 struct GameView: View {
     @ObservedObject var states: States
+    @State var roundTimer = 60
+    @State var timerText  = 3
+    
    
     var body: some View{
         ZStack{
@@ -38,16 +41,27 @@ struct GameView: View {
                 BotSprite()
             }
             else{
-                PlayerSprite(player: states.playerList[0])
+                PlayerSprite(states: states, player: states.playerList[0])
             }
+            BallSprite(states: states)
             
-            
-            
-            
-            
-        }.onAppear(){
+            Text(String(timerText)).opacity(self.states.roundEnd ? 1 : 0).font(Font.system(size: 40).monospacedDigit()).padding().position(x: bounds.width/2, y: bounds.height/2).foregroundColor(.white)
+    
+        }.navigationBarBackButtonHidden(true)
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
+            .onAppear(){
             states.playerList[0].setStartingPositioning(point: player1Start)
             states.playerList[1].setStartingPositioning(point: player2Start)
+        }.background(.radialGradient(Gradient(colors: [.indigo, .blue, .purple]), center: .center, startRadius: 50, endRadius: 500)).onReceive(self.states.timer){ _ in
+            if(self.states.roundEnd){
+                roundTimer -= 1
+                timerText = Int(roundTimer/20)+1
+                if(roundTimer <= 0){
+                    states.newRound()
+                    roundTimer = 60
+                }
+            }
         }
     }
 }
