@@ -25,11 +25,29 @@ struct GameView: View {
    
     var body: some View{
         ZStack{
+            
             ScoreCounter(states: self.states)
             Goal(color: .green, postion: player1GoalPosition)
             Goal(color: .red, postion: player2GoalPosition)
+            Line().stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
+                 .frame(height: 1)
+                 .foregroundColor(.secondary)
+                 .position(x: bounds.width/2, y: bounds.height/2)
+            
+            if(states.playerList[0].isBot){
+                BotSprite()
+            }
+            else{
+                PlayerSprite(player: states.playerList[0])
+            }
             
             
+            
+            
+            
+        }.onAppear(){
+            states.playerList[0].setStartingPositioning(point: player1Start)
+            states.playerList[1].setStartingPositioning(point: player2Start)
         }
     }
 }

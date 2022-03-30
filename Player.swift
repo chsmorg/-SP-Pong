@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class ConnectedPlayer: ObservableObject{
     
@@ -19,6 +20,10 @@ class ConnectedPlayer: ObservableObject{
     @Published var isBot: Bool = false
     @Published var difficulty: Int = 1
     @Published var ready: Bool = false
+    //player positioning
+    @Published var startingPosition = CGPoint(x: 0, y: 0)
+    @Published var position = CGPoint(x: 0, y: 0)
+    @Published var playerLastPosition = CGPoint(x: 0, y: 0)
     
     init(name: String){
         self.name = name
@@ -53,6 +58,11 @@ class ConnectedPlayer: ObservableObject{
     }
     func resetScore(){
         self.score = 0
+    }
+    func setStartingPositioning(point: CGPoint){
+        self.startingPosition = point
+        self.position = point
+        self.playerLastPosition = point
     }
     
 
