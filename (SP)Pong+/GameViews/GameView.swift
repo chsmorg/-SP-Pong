@@ -41,11 +41,11 @@ struct GameView: View {
                 BotSprite(states: states, bot: states.playerList[0])
             }
             else{
-                PlayerSprite(states: states, player: states.playerList[0])
+                PlayerSprite(states: states, player: states.playerList[0], physics: Physics(states: states, player: states.playerList[0]))
             }
             
-            BotSprite(states: states, bot: states.playerList[1])
-            BallSprite(states: states)
+           // BotSprite(states: states, bot: states.playerList[1])
+            BallSprite(states: states, physics: Physics(states: states))
             
             Text(String(timerText)).opacity(self.states.roundEnd ? 1 : 0).font(Font.system(size: 40).monospacedDigit()).padding().position(x: bounds.width/2, y: bounds.height/2).foregroundColor(.white)
             

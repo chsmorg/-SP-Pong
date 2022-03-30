@@ -29,6 +29,7 @@
 		ABE91E5327F3FC5F0047D600 /* PlayerSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E5227F3FC5F0047D600 /* PlayerSprite.swift */; };
 		ABE91E5527F3FDB00047D600 /* BotSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E5427F3FDB00047D600 /* BotSprite.swift */; };
 		ABE91E5727F405F90047D600 /* BallSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E5627F405F90047D600 /* BallSprite.swift */; };
+		ABE91E5B27F4DCE30047D600 /* GamePhysics.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E5A27F4DCE30047D600 /* GamePhysics.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		ABE91E5227F3FC5F0047D600 /* PlayerSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSprite.swift; sourceTree = "<group>"; };
 		ABE91E5427F3FDB00047D600 /* BotSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotSprite.swift; sourceTree = "<group>"; };
 		ABE91E5627F405F90047D600 /* BallSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallSprite.swift; sourceTree = "<group>"; };
+		ABE91E5A27F4DCE30047D600 /* GamePhysics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePhysics.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 		ABE91E5927F43DF90047D600 /* AbstractClasses */ = {
 			isa = PBXGroup;
 			children = (
+				ABE91E5A27F4DCE30047D600 /* GamePhysics.swift */,
 				ABC96C0B27F23BA500B861ED /* States.swift */,
 				ABC96C0727F23ADD00B861ED /* Player.swift */,
 			);
@@ -369,6 +372,7 @@
 				ABE91E4127F3F3250047D600 /* GameView.swift in Sources */,
 				ABE91E4E27F3F64A0047D600 /* ScoreCounterDot.swift in Sources */,
 				ABE91E3927F3E05F0047D600 /* PlayerView.swift in Sources */,
+				ABE91E5B27F4DCE30047D600 /* GamePhysics.swift in Sources */,
 				ABE91E5327F3FC5F0047D600 /* PlayerSprite.swift in Sources */,
 				ABE91E4927F3F5890047D600 /* Goal.swift in Sources */,
 				ABC96C0A27F23B6900B861ED /* GameLobbyView.swift in Sources */,
