@@ -21,7 +21,7 @@ struct PlayerSprite: View {
     var simpleDrag: some Gesture {
             DragGesture()
                 .onChanged { value in
-                    if(!states.roundEnd){
+                    if(!states.roundEnd && !states.gamePaused){
                         if(value.location.y > side){
                             self.player.lastPosition = self.player.position
                             self.player.position = value.location
@@ -44,7 +44,10 @@ struct PlayerSprite: View {
                     side = bounds.height/2-30
                 }
             }.onReceive(self.states.timer){ _ in
-                physics.update()
+                if !states.gamePaused{
+                    physics.update()
+                }
+                
             }
     }
   

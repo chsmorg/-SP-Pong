@@ -12,6 +12,10 @@ import AVFoundation
 class Physics: ObservableObject{
     var states: States
     var player: ConnectedPlayer
+    init(){
+        self.player = ConnectedPlayer(name: "")
+        self.states = States(player: player)
+    }
     init(states: States){
         self.states = states
         self.player = self.states.player

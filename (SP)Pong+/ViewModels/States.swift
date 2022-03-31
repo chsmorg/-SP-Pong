@@ -14,6 +14,7 @@ class States: ObservableObject {
     @Published var player: ConnectedPlayer
     @Published var playerList: [ConnectedPlayer] = []
     @Published var debug: Bool = false
+    @Published var gamePaused = false
     
     @Published var ballSpeed: Int = 10
     @Published var rounds: Int = 5

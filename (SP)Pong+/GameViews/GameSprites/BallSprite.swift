@@ -26,7 +26,10 @@ struct BallSprite: View {
             .position(self.states.ballPosition).onAppear(){
                 states.ballPosition = ballStart
             }.onReceive(self.states.timer){ _ in
-                physics.updateBall(bounds: bounds)
+                if(!states.gamePaused){
+                    physics.updateBall(bounds: bounds)
+                }
+                
             }
     }
     
