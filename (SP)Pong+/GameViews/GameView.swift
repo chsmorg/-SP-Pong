@@ -29,9 +29,10 @@ struct GameView: View {
     var body: some View{
         ZStack{
             
-            ScoreCounter(states: self.states)
+            
             Goal(color: .green, postion: player1GoalPosition)
             Goal(color: .red, postion: player2GoalPosition)
+            ScoreCounter(states: self.states)
             Line().stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
                  .frame(height: 1)
                  .foregroundColor(.secondary)
@@ -67,7 +68,7 @@ struct GameView: View {
             states.roundEnd = true
               
         }.background(.radialGradient(Gradient(colors: [.indigo, .blue, .purple]), center: .center, startRadius: 50, endRadius: 500)).onReceive(self.states.timer){ _ in
-            if(self.states.roundEnd){
+            if(self.states.roundEnd && !self.states.gamePaused){
                 if(self.states.gameEnd){self.presentationMode.wrappedValue.dismiss()}
                 self.roundTimer -= 1
                 timerText = Int(self.roundTimer/40)+1
@@ -76,7 +77,9 @@ struct GameView: View {
                     
                 }
             }
-            else{self.roundTimer = 120}
+            else{
+                if(!self.states.gamePaused) {self.roundTimer = 120}
+            }
         }
     }
 }

@@ -40,6 +40,9 @@ class ConnectedPlayer: ObservableObject{
         self.collision = false
         self.colTimer = false
     }
+    func resetScore(){
+        self.score = 0
+    }
     func setBot(){
         self.isBot = true
         self.setReady()

@@ -33,6 +33,24 @@ class States: ObservableObject {
         self.player = player
         self.addPlayer(player: player)
     }
+    func restartGame(){
+        self.roundEnd = true
+        self.gamePaused = false
+        self.ballVelocity = simd_float2(x: 0, y: 0)
+        
+        for p in self.playerList{
+            p.resetScore()
+            p.reset()
+        }
+    }
+    func setBallPosition(point: CGPoint){
+        self.ballPosition = point
+    }
+    func exitGame(){
+        self.endRound(scored: 0)
+        self.endGame(winner: 0)
+        self.gamePaused = false
+    }
     func reset(){
         self.gameEnd = false
         self.roundEnd = false

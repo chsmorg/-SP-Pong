@@ -9,9 +9,13 @@ import SwiftUI
 
 struct ScoreCounter: View{
     @ObservedObject var states: States
+    
+    
     var body: some View{
         HStack{
             ScoreCounterLayOut(player: states.playerList[0], rounds: states.rounds)
+            Spacer()
+            InGameOptions(states: states)
             Spacer()
             ScoreCounterLayOut(player: states.playerList[1], rounds: states.rounds)
             

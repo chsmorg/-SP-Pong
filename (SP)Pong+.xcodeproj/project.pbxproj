@@ -35,6 +35,7 @@
 		ABE91E6127F571E60047D600 /* TextAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E6027F571E60047D600 /* TextAreaView.swift */; };
 		ABE91E6327F5A8690047D600 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E6227F5A8690047D600 /* Version.swift */; };
 		ABE91E6527F638110047D600 /* BotControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E6427F638110047D600 /* BotControls.swift */; };
+		ABE91E6A27F65F8B0047D600 /* InGameOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E6927F65F8B0047D600 /* InGameOptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		ABE91E6027F571E60047D600 /* TextAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaView.swift; sourceTree = "<group>"; };
 		ABE91E6227F5A8690047D600 /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		ABE91E6427F638110047D600 /* BotControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotControls.swift; sourceTree = "<group>"; };
+		ABE91E6927F65F8B0047D600 /* InGameOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InGameOptions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				ABE91E4B27F3F6070047D600 /* ScoreCounter.swift */,
+				ABE91E6927F65F8B0047D600 /* InGameOptions.swift */,
 				ABE91E4F27F3F75A0047D600 /* ScoreCounterLayOut.swift */,
 				ABE91E4D27F3F64A0047D600 /* ScoreCounterDot.swift */,
 			);
@@ -387,6 +390,7 @@
 				ABC96C0427F21CA200B861ED /* StartPageView.swift in Sources */,
 				ABE91E5027F3F75A0047D600 /* ScoreCounterLayOut.swift in Sources */,
 				ABE91E5F27F56F750047D600 /* HelpPageView.swift in Sources */,
+				ABE91E6A27F65F8B0047D600 /* InGameOptions.swift in Sources */,
 				ABE91E6527F638110047D600 /* BotControls.swift in Sources */,
 				ABE91E4C27F3F6070047D600 /* ScoreCounter.swift in Sources */,
 				ABC96C0627F2296E00B861ED /* AnimationView.swift in Sources */,
