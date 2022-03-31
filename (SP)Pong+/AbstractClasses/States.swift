@@ -27,7 +27,6 @@ class States: ObservableObject {
     //ball physics 
     @Published var ballPosition = CGPoint(x: 0, y: 0)
     @Published var ballVelocity =  simd_float2(x: 0, y: 0)
-    @Published var ballDirection = simd_float2(x: 0, y: 0)
     
     init(player: ConnectedPlayer){
         self.player = player
@@ -46,8 +45,6 @@ class States: ObservableObject {
     func newRound(){
         self.roundEnd = false
     }
-    
-    
     func resetReady(){
         for p in self.playerList{
             if(p.isBot && p.player == 1){p.setBot()}

@@ -69,6 +69,7 @@ struct GameLobbyView: View {
         if(self.connected==1){
             self.states.player.host = true
             self.states.player.player = 1
+            //self.states.playerList[0].setBot()
             
         }
     }

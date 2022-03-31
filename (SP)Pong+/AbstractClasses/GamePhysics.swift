@@ -44,6 +44,7 @@ class Physics: ObservableObject{
         }
         else{player.position = self.player.startingPosition}
     }
+    
     func updateBall(bounds: CGRect){
         let p = self.states.ballPosition
             withAnimation{
@@ -55,7 +56,6 @@ class Physics: ObservableObject{
                     states.ballPosition.x += Double(self.states.ballVelocity.x)
                     states.ballPosition.y += Double(self.states.ballVelocity.y)
                     states.ballVelocity = self.states.ballVelocity * self.states.res
-                    states.ballDirection = simd_normalize(self.states.ballVelocity)
                 }
         }
     }
