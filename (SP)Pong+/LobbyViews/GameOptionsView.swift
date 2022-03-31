@@ -12,7 +12,7 @@ struct GameOptions: View{
     @ObservedObject var states: States
     @State var player: ConnectedPlayer
     @State var rounds: Double = 5
-    @State var ballSpeed: Double = 5
+    @State var ballSpeed: Double = 10
     var body: some View{
         VStack{
             Text("Game Settings:").font(.system(size: 20))
@@ -25,7 +25,7 @@ struct GameOptions: View{
             }
             Text("Ball Speed: \(Int(states.ballSpeed))").font(.system(size: 20, design: .rounded))
             if(player.host){
-                Slider(value: $ballSpeed, in: 5...20).accentColor(.cyan).padding().onChange(of: ballSpeed){
+                Slider(value: $ballSpeed, in: 10...25).accentColor(.cyan).padding().onChange(of: ballSpeed){
                     num in
                     states.ballSpeed = Int(ballSpeed)
                 }

@@ -56,7 +56,7 @@ struct GameLobbyView: View {
                 
         }.navigationBarHidden(true)
             .navigationBarTitle("")
-            .navigationBarBackButtonHidden(true)
+            
             .foregroundColor(.cyan).opacity(0.9)
             .onAppear{
                 self.setUpLobby()
@@ -69,7 +69,7 @@ struct GameLobbyView: View {
         if(self.connected==1){
             self.states.player.host = true
             self.states.player.player = 1
-            //self.states.playerList[0].setBot()
+            
             
         }
     }

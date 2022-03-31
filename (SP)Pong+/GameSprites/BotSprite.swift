@@ -79,7 +79,7 @@ struct BotSprite: View {
     }
     func attack() {
         var p = self.states.ballPosition
-        p.x += Double.random(in: -30...30)
+        p.x += Double.random(in: -55...55)
         withAnimation(){
             
             self.bot.position = path(point: p, time: 7)

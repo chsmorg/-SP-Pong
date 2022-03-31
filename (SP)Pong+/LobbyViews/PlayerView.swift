@@ -15,7 +15,12 @@ struct Player: View {
     var body: some View{
         HStack{
             VStack{
-                Text(player.name.capitalized).padding().font(.system(size: 15, design: .rounded)).foregroundColor(self.player.ready ? .green: .white)
+                Button(action: {
+                    if(self.player.player == 1) {player.setBot()}
+                }, label:{
+                    Text(player.name.capitalized).padding().font(.system(size: 15, design: .rounded)).foregroundColor(self.player.ready ? .green: .white)
+                })
+                
                 Circle().fill(.radialGradient(Gradient(colors: [self.player.player == 1 ? .green : .red, .white]), center: .center, startRadius: 2, endRadius: 25))
                     .frame(width: 30, height: 30)
             }
