@@ -30,28 +30,38 @@ struct GameLobbyView: View {
                             Player(player: states.playerList[index])
                         }
                     }
+                    
                     Divider()
                     GameOptions(states: states, player: states.player).padding()
                     
 
                 }
-                Text(String(timerText))
-                    .opacity(self.gameReady ? 1 : 0)
-                    .font(Font.system(size: 70, design: .rounded).bold())
-                    .padding()
-                    .position(x: bounds.width/2, y: bounds.height/2.5)
-                    .foregroundColor(.green)
-                    .onReceive(self.states.timer){ _ in
-                        if(self.states.playerList[0].ready && self.states.playerList[1].ready){ gameReady = true}
-                        else {gameReady = false; timer = 200}
+                Button(action:{
+                    gameStart = true
+                    states.reset()
+                },label:{
+                    Text("Start Game")
+                        .padding(15)
+                        .foregroundColor(.black)
+                        .font(.system(size: 30, design: .rounded))
+                        .frame(width: UIScreen.main.bounds.width-50, height: UIScreen.main.bounds.height/12)
+                       .background(RoundedRectangle(cornerRadius: 20)
+                            .fill(.green)
+                            .frame(width: UIScreen.main.bounds.width-50, height: UIScreen.main.bounds.height/12)
+                            .padding(4))
+                }).opacity(self.gameReady ? 1 : 0)
+                    .frame(width: UIScreen.main.bounds.width-50, height: UIScreen.main.bounds.height/12)
+                .onReceive(self.states.timer){ _ in
+                    if(self.states.playerList[0].ready && self.states.playerList[1].ready){
+                        gameReady = true
                         
-                        if(gameReady){
-                            timer -= 1
-                            timerText = Int(timer/40)+1
-                            if(timer <= 0){ timer = 200; gameStart = true; states.reset()}
-                        }
-                        
-                     }
+                    }
+                    else {gameReady = false}
+                }
+                    
+                
+                
+
             }.background(.radialGradient(Gradient(colors: [.indigo, .blue, .purple]), center: .center, startRadius: 50, endRadius: 500))
                 
         }.navigationBarHidden(true)

@@ -27,7 +27,7 @@ struct StartPageView: View {
                     .disableAutocorrection(true)
                     .foregroundColor(.white)
                     .onSubmit {
-                        if(!name.isEmpty && name.count > 3 && name.count < 8){
+                        if(!name.isEmpty && name.count >= 3 && name.count <= 8){
                             validName = true
                         }
                         else{
