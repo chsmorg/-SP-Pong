@@ -59,7 +59,7 @@ struct HelpPageView: View {
                         Divider()
                         TextAreaView(text: "The only objective is to knock the black ball into the oposing goal before they get it in yours")
                         TextAreaView(text: "good luck and more information can be found on my github here: github.com/chsmorg/-SP-Pong")
-                        Text("Version 1.0.1").font(.system(size:8, weight: .regular, design: .rounded))
+                        Text(version).font(.system(size:8, weight: .regular, design: .rounded))
                             .foregroundColor(Color(UIColor.lightGray))
                     }
                 }

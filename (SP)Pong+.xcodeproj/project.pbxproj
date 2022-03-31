@@ -33,6 +33,7 @@
 		ABE91E5D27F5260D0047D600 /* Vision.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E5C27F5260D0047D600 /* Vision.swift */; };
 		ABE91E5F27F56F750047D600 /* HelpPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E5E27F56F750047D600 /* HelpPageView.swift */; };
 		ABE91E6127F571E60047D600 /* TextAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E6027F571E60047D600 /* TextAreaView.swift */; };
+		ABE91E6327F5A8690047D600 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E6227F5A8690047D600 /* Version.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		ABE91E5C27F5260D0047D600 /* Vision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vision.swift; sourceTree = "<group>"; };
 		ABE91E5E27F56F750047D600 /* HelpPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPageView.swift; sourceTree = "<group>"; };
 		ABE91E6027F571E60047D600 /* TextAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaView.swift; sourceTree = "<group>"; };
+		ABE91E6227F5A8690047D600 /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				ABE91E3C27F3E17E0047D600 /* LobbyViews */,
 				ABC96BDD27F21C8B00B861ED /* Assets.xcassets */,
 				ABC96BDF27F21C8B00B861ED /* Preview Content */,
+				ABE91E6227F5A8690047D600 /* Version.swift */,
 			);
 			path = "(SP)Pong+";
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				ABE91E3B27F3E1030047D600 /* GameOptionsView.swift in Sources */,
 				ABE91E5D27F5260D0047D600 /* Vision.swift in Sources */,
 				ABE91E5527F3FDB00047D600 /* BotSprite.swift in Sources */,
+				ABE91E6327F5A8690047D600 /* Version.swift in Sources */,
 				ABE91E4127F3F3250047D600 /* GameView.swift in Sources */,
 				ABE91E4E27F3F64A0047D600 /* ScoreCounterDot.swift in Sources */,
 				ABE91E3927F3E05F0047D600 /* PlayerView.swift in Sources */,

@@ -75,7 +75,8 @@ struct StartPageView: View {
                         EmptyView()
                 }
                 Spacer()
-            
+                Text(version).font(.system(size:8, weight: .regular, design: .rounded))
+                    .foregroundColor(Color(UIColor.lightGray))
             }.background(.radialGradient(Gradient(colors: [.indigo, .blue, .purple]), center: .center, startRadius: 50, endRadius: 500))
         }
             .navigationBarTitle("")
