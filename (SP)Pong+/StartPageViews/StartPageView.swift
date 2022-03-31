@@ -51,7 +51,7 @@ struct StartPageView: View {
                             .foregroundColor(.black)
                             .background(RoundedRectangle(cornerRadius: 45).frame(width: UIScreen.main.bounds.width/3).foregroundColor(validName ? .green: .red))
                            
-                    }).padding().opacity(0.8).frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.height/15)
+                    }).padding().opacity(0.8).frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.height/15).shadow(radius: 70)
                     Spacer()
                     
                     
@@ -64,7 +64,7 @@ struct StartPageView: View {
                             .background(RoundedRectangle(cornerRadius: 45).frame(width: UIScreen.main.bounds.width/3).foregroundColor(.cyan))
                             
                            
-                    }).padding().opacity(0.8).frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.height/15)
+                    }).padding().opacity(0.8).frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.height/15).shadow(radius: 70)
                     Spacer()
                     
                 }

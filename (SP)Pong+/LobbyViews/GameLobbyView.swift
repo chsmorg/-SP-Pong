@@ -50,7 +50,7 @@ struct GameLobbyView: View {
                         .fill(.cyan)
                             .frame(width: UIScreen.main.bounds.width-50, height: UIScreen.main.bounds.height/12)
                             .padding(4))
-                }).opacity(self.gameReady ? 0.8 : 0)
+                }).opacity(self.gameReady ? 0.8 : 0).shadow(radius: 70)
                     .frame(width: UIScreen.main.bounds.width-50, height: UIScreen.main.bounds.height/12)
                 .onReceive(self.states.timer){ _ in
                     if(self.states.playerList[0].ready && self.states.playerList[1].ready){
