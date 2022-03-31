@@ -33,10 +33,12 @@ struct GameView: View {
             Goal(color: .green, postion: player1GoalPosition)
             Goal(color: .red, postion: player2GoalPosition)
             ScoreCounter(states: self.states)
+            GameCircle().position(x: bounds.width/2, y: bounds.height/2)
             Line().stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
                  .frame(height: 1)
                  .foregroundColor(.secondary)
                  .position(x: bounds.width/2, y: bounds.height/2)
+            
             if(self.states.debug){
                 VStack{
                     Text("player 1: \(String(describing: self.states.playerList[0].velocity))").font(.system(size: 7)).padding()
