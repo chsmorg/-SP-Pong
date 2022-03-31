@@ -61,6 +61,7 @@ struct GameLobbyView: View {
             .onAppear{
                 self.setUpLobby()
                 self.addBot()
+                
         }
     }
     

@@ -21,12 +21,11 @@ struct PlayerSprite: View {
     var simpleDrag: some Gesture {
             DragGesture()
                 .onChanged { value in
-                        
                     if(!states.roundEnd){
-                      // if(value.location.y > side){
+                        if(value.location.y > side){
                             self.player.lastPosition = self.player.position
                             self.player.position = value.location
-                      //  }
+                       }
                     }
                 }
             }

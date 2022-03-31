@@ -13,6 +13,7 @@ class States: ObservableObject {
     @Published var inGame: Bool = false
     @Published var player: ConnectedPlayer
     @Published var playerList: [ConnectedPlayer] = []
+    @Published var debug: Bool = false
     
     @Published var ballSpeed: Int = 10
     @Published var rounds: Int = 5
@@ -26,9 +27,11 @@ class States: ObservableObject {
     //ball physics 
     @Published var ballPosition = CGPoint(x: 0, y: 0)
     @Published var ballVelocity =  simd_float2(x: 0, y: 0)
+    @Published var ballDirection = simd_float2(x: 0, y: 0)
     
     init(player: ConnectedPlayer){
         self.player = player
+        self.addPlayer(player: player)
     }
     func reset(){
         self.gameEnd = false

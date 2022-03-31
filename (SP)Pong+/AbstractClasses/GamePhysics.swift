@@ -21,13 +21,18 @@ class Physics: ObservableObject{
         self.player = player
     }
     
-    func findDirection(ball: CGPoint, bot: CGPoint) -> simd_float2{
-        let p1 = bot
-        let p2 = ball
+    func findDirection(point1: CGPoint, point2: CGPoint) -> simd_float2{
+        let p1 = point1
+        let p2 = point2
         let delta = simd_float2(x: Float(p2.x - p1.x), y: Float(p2.y - p1.y))
-        let d  =  simd_normalize(delta)
+        return simd_normalize(delta)
         
-        return d
+    }
+    func findDistance(point1: CGPoint, point2: CGPoint) -> Float{
+        let p1 = point1
+        let p2 = point2
+        let delta = simd_float2(x: Float(p2.x - p1.x), y: Float(p2.y - p1.y))
+        return simd_length(delta)
         
     }
     
@@ -35,7 +40,7 @@ class Physics: ObservableObject{
     func update(){
         if(!states.roundEnd && !states.gameEnd){
             player.velocity = calcVelocity()
-            if checkCollision(ballPosition: self.states.ballPosition){ resolveCollision()}
+            if checkCollision(ballPosition: self.states.ballPosition){resolveCollision()}
         }
         else{player.position = self.player.startingPosition}
     }
@@ -50,6 +55,7 @@ class Physics: ObservableObject{
                     states.ballPosition.x += Double(self.states.ballVelocity.x)
                     states.ballPosition.y += Double(self.states.ballVelocity.y)
                     states.ballVelocity = self.states.ballVelocity * self.states.res
+                    states.ballDirection = simd_normalize(self.states.ballVelocity)
                 }
         }
     }

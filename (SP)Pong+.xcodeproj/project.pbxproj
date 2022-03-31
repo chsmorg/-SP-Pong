@@ -30,6 +30,7 @@
 		ABE91E5527F3FDB00047D600 /* BotSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E5427F3FDB00047D600 /* BotSprite.swift */; };
 		ABE91E5727F405F90047D600 /* BallSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E5627F405F90047D600 /* BallSprite.swift */; };
 		ABE91E5B27F4DCE30047D600 /* GamePhysics.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E5A27F4DCE30047D600 /* GamePhysics.swift */; };
+		ABE91E5D27F5260D0047D600 /* Vision.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E5C27F5260D0047D600 /* Vision.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		ABE91E5427F3FDB00047D600 /* BotSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotSprite.swift; sourceTree = "<group>"; };
 		ABE91E5627F405F90047D600 /* BallSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallSprite.swift; sourceTree = "<group>"; };
 		ABE91E5A27F4DCE30047D600 /* GamePhysics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePhysics.swift; sourceTree = "<group>"; };
+		ABE91E5C27F5260D0047D600 /* Vision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vision.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 				ABE91E5127F3FA020047D600 /* ScoreCounter */,
 				ABE91E4627F3F5710047D600 /* Line.swift */,
 				ABE91E4827F3F5890047D600 /* Goal.swift */,
+				ABE91E5C27F5260D0047D600 /* Vision.swift */,
 			);
 			path = GameElements;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				ABC96C0C27F23BA500B861ED /* States.swift in Sources */,
 				ABE91E5727F405F90047D600 /* BallSprite.swift in Sources */,
 				ABE91E3B27F3E1030047D600 /* GameOptionsView.swift in Sources */,
+				ABE91E5D27F5260D0047D600 /* Vision.swift in Sources */,
 				ABE91E5527F3FDB00047D600 /* BotSprite.swift in Sources */,
 				ABE91E4127F3F3250047D600 /* GameView.swift in Sources */,
 				ABE91E4E27F3F64A0047D600 /* ScoreCounterDot.swift in Sources */,

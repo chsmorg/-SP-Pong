@@ -36,6 +36,13 @@ struct GameView: View {
                  .frame(height: 1)
                  .foregroundColor(.secondary)
                  .position(x: bounds.width/2, y: bounds.height/2)
+            if(self.states.debug){
+                VStack{
+                    Text("player 1: \(String(describing: self.states.playerList[0].velocity))").font(.system(size: 7)).padding()
+                    Text("player 2: \(String(describing: self.states.playerList[1].velocity))").font(.system(size: 7)).padding()
+                    Text("ball: \(String(describing: self.states.ballVelocity))").font(.system(size: 7)).padding()
+                }
+            }
             
             if(states.playerList[0].isBot){
                 BotSprite(states: states, bot: states.playerList[0], physics: Physics(states: states, player: states.playerList[0]))
@@ -57,7 +64,8 @@ struct GameView: View {
             .onAppear(){
             states.playerList[0].setStartingPositioning(point: player1Start)
             states.playerList[1].setStartingPositioning(point: player2Start)
-                states.roundEnd = true
+            states.roundEnd = true
+              
         }.background(.radialGradient(Gradient(colors: [.indigo, .blue, .purple]), center: .center, startRadius: 50, endRadius: 500)).onReceive(self.states.timer){ _ in
             if(self.states.roundEnd){
                 if(self.states.gameEnd){self.presentationMode.wrappedValue.dismiss()}

@@ -39,9 +39,8 @@ struct StartPageView: View {
                 Button(action: {
                     if(validName){
                         let player = ConnectedPlayer(name: name)
-                       self.states = States(player: player)
-                       states.addPlayer(player: player)
-                    change = true
+                        self.states = States(player: player)
+                        self.change = true
                        
                     }
                 },label: {
@@ -60,6 +59,9 @@ struct StartPageView: View {
         }
             .navigationBarTitle("")
             .navigationBarHidden(true)
+            .onAppear(){
+                if self.states.debug {self.change = true}
+            }
             
     }
 }
