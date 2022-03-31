@@ -19,7 +19,7 @@ class ConnectedPlayer: ObservableObject{
     @Published var connected = false
     @Published var player: Int = 1
     @Published var isBot: Bool = false
-    @Published var difficulty: Int = 1
+    @Published var difficulty: Int = 3
     @Published var ready: Bool = false
     //player positioning
     @Published var startingPosition = CGPoint(x: 0, y: 0)
@@ -58,9 +58,9 @@ class ConnectedPlayer: ObservableObject{
         self.player = pNum
     }
     func setDif(){
-        self.difficulty+=1
-        if(self.difficulty > 3){
-            self.difficulty = 1
+        self.difficulty-=1
+        if(self.difficulty < 0){
+            self.difficulty = 3
         }
     }
     func scored(){

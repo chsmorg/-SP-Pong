@@ -36,16 +36,16 @@ struct Player: View {
                 }
                 ZStack{
                     Button(action: {
-                        player.setDif()
+                        self.player.setDif()
                         switch self.player.difficulty{
-                        case 1:
-                            color = Color(.green)
+                        case 3:
+                            color = Color(.red)
                             dif = "Easy"
                         case 2:
                             color = Color(.yellow)
                             dif = "Medium"
                         default:
-                            color = Color(.red)
+                            color = Color(.green)
                             dif = "Hard"
                         }
                         
