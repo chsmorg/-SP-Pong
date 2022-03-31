@@ -16,7 +16,10 @@ struct Player: View {
         HStack{
             VStack{
                 Button(action: {
-                    if(self.player.player == 1) {player.setBot()}
+                    if(self.player.player == 1){
+                        if self.player.isBot == false {player.setBot()}
+                        else{player.setPlayer()}
+                    }
                 }, label:{
                     Text(player.name.capitalized).padding().font(.system(size: 15, design: .rounded)).foregroundColor(self.player.ready ? .green: .white)
                 })
@@ -56,7 +59,8 @@ struct Player: View {
                     }).opacity(self.player.isBot ? 1 : 0)
                     
                     Button(action: {
-                        player.setReady()
+                        if(self.player.ready==false) {player.setReady()}
+                        else{ player.unReady()}
                     
                     },label: {
                         Text("Ready").padding()

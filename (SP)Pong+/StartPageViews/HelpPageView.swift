@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HelpPageView: View {
+    @State var pageOpen = false
     @State var b1 = ConnectedPlayer(name: "Cpu")
     @State var b2 = ConnectedPlayer(name: "Cpu")
     @State var b3 = ConnectedPlayer(name: "Cpu")
@@ -68,17 +69,21 @@ struct HelpPageView: View {
             }
             
         }.background(.radialGradient(Gradient(colors: [.indigo, .blue, .purple]), center: .center, startRadius: 50, endRadius: 500)).onAppear(){
-            self.b1.setBot()
-            self.b1.player = 2
-            self.b2.setBot()
-            self.b2.player = 2
-            self.b3.player = 2
-            self.b3.setBot()
-            self.p1.host = true
-            self.states.addPlayer(player: b3)
-            self.states.playerList[0].score = 3
-            self.states.playerList[1].score = 6
-            self.states.rounds = 10
+            if(pageOpen == false){
+                self.b1.setBot()
+                self.b1.player = 2
+                self.b2.setBot()
+                self.b2.player = 2
+                self.b3.player = 2
+                self.b3.setBot()
+                self.p1.host = true
+                self.states.addPlayer(player: b3)
+                self.states.playerList[0].score = 3
+                self.states.playerList[1].score = 6
+                self.states.rounds = 10
+                self.pageOpen = true
+            }
+           
             
         }
         

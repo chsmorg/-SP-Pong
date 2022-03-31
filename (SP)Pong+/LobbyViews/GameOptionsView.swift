@@ -15,6 +15,7 @@ struct GameOptions: View{
     @State var ballSpeed: Double = 10
     var body: some View{
         VStack{
+            Divider()
             Text("Game Settings:").font(.system(size: 20))
             Text("Rounds: \(Int(states.rounds))").font(.system(size: 20, design: .rounded))
             if(player.host){

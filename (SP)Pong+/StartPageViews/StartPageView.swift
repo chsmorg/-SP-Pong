@@ -38,6 +38,7 @@ struct StartPageView: View {
                 
                 
                 HStack{
+                    Spacer()
                     Button(action: {
                         if(validName){
                             let player = ConnectedPlayer(name: name)
@@ -46,12 +47,11 @@ struct StartPageView: View {
                            
                         }
                     },label: {
-                        Text("Start").padding()
+                        Text("Start").padding().frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.height/15)
                             .foregroundColor(.black)
-                            .background(RoundedRectangle(cornerRadius: 15).frame(width: UIScreen.main.bounds.width/3).foregroundColor(validName ? .green: .red))
-                            .cornerRadius(15)
+                            .background(RoundedRectangle(cornerRadius: 45).frame(width: UIScreen.main.bounds.width/3).foregroundColor(validName ? .green: .red))
                            
-                    }).padding()
+                    }).padding().opacity(0.8).frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.height/15)
                     Spacer()
                     
                     
@@ -59,12 +59,13 @@ struct StartPageView: View {
                             self.help = true
                         
                     },label: {
-                        Text("How To Play").padding()
+                        Text("How To Play").padding().frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.height/15)
                             .foregroundColor(.black)
-                            .background(RoundedRectangle(cornerRadius: 15).frame(width: UIScreen.main.bounds.width/3).foregroundColor(.green))
-                            .cornerRadius(15)
+                            .background(RoundedRectangle(cornerRadius: 45).frame(width: UIScreen.main.bounds.width/3).foregroundColor(.cyan))
+                            
                            
-                    }).padding()
+                    }).padding().opacity(0.8).frame(width: UIScreen.main.bounds.width/3, height: UIScreen.main.bounds.height/15)
+                    Spacer()
                     
                 }
                 

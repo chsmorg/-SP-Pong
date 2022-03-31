@@ -18,6 +18,7 @@ struct GameLobbyView: View {
     @State var gameStart = false
     var body: some View {
         NavigationView{
+            
             ZStack{
                 
                 NavigationLink(destination: GameView(states: states), isActive: $gameStart) {
@@ -31,7 +32,7 @@ struct GameLobbyView: View {
                         }
                     }
                     
-                    Divider()
+                    
                     GameOptions(states: states, player: states.player).padding()
                     
 
@@ -45,11 +46,11 @@ struct GameLobbyView: View {
                         .foregroundColor(.black)
                         .font(.system(size: 30, design: .rounded))
                         .frame(width: UIScreen.main.bounds.width-50, height: UIScreen.main.bounds.height/12)
-                       .background(RoundedRectangle(cornerRadius: 20)
-                            .fill(.green)
+                       .background(RoundedRectangle(cornerRadius: 45)
+                        .fill(.cyan)
                             .frame(width: UIScreen.main.bounds.width-50, height: UIScreen.main.bounds.height/12)
                             .padding(4))
-                }).opacity(self.gameReady ? 1 : 0)
+                }).opacity(self.gameReady ? 0.8 : 0)
                     .frame(width: UIScreen.main.bounds.width-50, height: UIScreen.main.bounds.height/12)
                 .onReceive(self.states.timer){ _ in
                     if(self.states.playerList[0].ready && self.states.playerList[1].ready){
@@ -66,6 +67,7 @@ struct GameLobbyView: View {
                 
         }.navigationBarHidden(true)
             .navigationBarTitle("")
+            .navigationBarBackButtonHidden(false)
             
             .foregroundColor(.cyan).opacity(0.9)
             .onAppear{

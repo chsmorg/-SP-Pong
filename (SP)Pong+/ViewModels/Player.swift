@@ -41,11 +41,18 @@ class ConnectedPlayer: ObservableObject{
         self.colTimer = false
     }
     func setBot(){
-        self.isBot.toggle()
-        self.ready.toggle()
+        self.isBot = true
+        self.setReady()
+    }
+    func setPlayer(){
+        self.isBot = false
+        self.unReady()
     }
     func setReady(){
-        self.ready.toggle()
+        self.ready = true
+    }
+    func unReady(){
+        self.ready = false
     }
     func setPlayer(pNum: Int){
         self.player = pNum
