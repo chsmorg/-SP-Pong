@@ -13,7 +13,8 @@ struct StartPageView: View {
     @State var states = States(player: ConnectedPlayer(name: ""))
     @State var validName = false
     @State var start = false
-    @State var change = false
+    @State var lobby = false
+    @State var help = false
     var body: some View {
         NavigationView{
             VStack{
@@ -26,31 +27,51 @@ struct StartPageView: View {
                     .disableAutocorrection(true)
                     .foregroundColor(.white)
                     .onSubmit {
-                        if(!name.isEmpty){
+                        if(!name.isEmpty && name.count > 3 && name.count < 8){
                             validName = true
                         }
                         else{
                             validName = false
                         }
                     }
+                Spacer()
                 
                 
-            
-                Button(action: {
-                    if(validName){
-                        let player = ConnectedPlayer(name: name)
-                        self.states = States(player: player)
-                        self.change = true
-                       
-                    }
-                },label: {
-                    Text("Start").padding()
-                        .foregroundColor(.black)
-                        .background(RoundedRectangle(cornerRadius: 15).frame(width: UIScreen.main.bounds.width/3).foregroundColor(validName ? .green: .red))
-                        .cornerRadius(15)
-                       
-                }).padding()
-                NavigationLink(destination: GameLobbyView(states: states), isActive: $change) {
+                HStack{
+                    Button(action: {
+                        if(validName){
+                            let player = ConnectedPlayer(name: name)
+                            self.states = States(player: player)
+                            self.lobby = true
+                           
+                        }
+                    },label: {
+                        Text("Start").padding()
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 15).frame(width: UIScreen.main.bounds.width/3).foregroundColor(validName ? .green: .red))
+                            .cornerRadius(15)
+                           
+                    }).padding()
+                    Spacer()
+                    
+                    
+                    Button(action: {
+                            self.help = true
+                        
+                    },label: {
+                        Text("How To Play").padding()
+                            .foregroundColor(.black)
+                            .background(RoundedRectangle(cornerRadius: 15).frame(width: UIScreen.main.bounds.width/3).foregroundColor(.green))
+                            .cornerRadius(15)
+                           
+                    }).padding()
+                    
+                }
+                
+                NavigationLink(destination: GameLobbyView(states: states), isActive: $lobby) {
+                        EmptyView()
+                }
+                NavigationLink(destination: HelpPageView(), isActive: $help) {
                         EmptyView()
                 }
                 Spacer()
@@ -60,7 +81,7 @@ struct StartPageView: View {
             .navigationBarTitle("")
             .navigationBarHidden(true)
             .onAppear(){
-                if self.states.debug {self.change = true}
+                if self.states.debug {self.lobby = true}
             }
             
     }

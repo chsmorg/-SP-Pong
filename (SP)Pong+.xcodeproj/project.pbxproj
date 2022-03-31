@@ -31,6 +31,8 @@
 		ABE91E5727F405F90047D600 /* BallSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E5627F405F90047D600 /* BallSprite.swift */; };
 		ABE91E5B27F4DCE30047D600 /* GamePhysics.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E5A27F4DCE30047D600 /* GamePhysics.swift */; };
 		ABE91E5D27F5260D0047D600 /* Vision.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E5C27F5260D0047D600 /* Vision.swift */; };
+		ABE91E5F27F56F750047D600 /* HelpPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E5E27F56F750047D600 /* HelpPageView.swift */; };
+		ABE91E6127F571E60047D600 /* TextAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E6027F571E60047D600 /* TextAreaView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		ABE91E5627F405F90047D600 /* BallSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallSprite.swift; sourceTree = "<group>"; };
 		ABE91E5A27F4DCE30047D600 /* GamePhysics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePhysics.swift; sourceTree = "<group>"; };
 		ABE91E5C27F5260D0047D600 /* Vision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vision.swift; sourceTree = "<group>"; };
+		ABE91E5E27F56F750047D600 /* HelpPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPageView.swift; sourceTree = "<group>"; };
+		ABE91E6027F571E60047D600 /* TextAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAreaView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +184,8 @@
 			children = (
 				ABC96C0527F2296E00B861ED /* AnimationView.swift */,
 				ABC96C0327F21CA200B861ED /* StartPageView.swift */,
+				ABE91E5E27F56F750047D600 /* HelpPageView.swift */,
+				ABE91E6027F571E60047D600 /* TextAreaView.swift */,
 			);
 			path = StartPageViews;
 			sourceTree = "<group>";
@@ -366,6 +372,7 @@
 			files = (
 				ABC96C0427F21CA200B861ED /* StartPageView.swift in Sources */,
 				ABE91E5027F3F75A0047D600 /* ScoreCounterLayOut.swift in Sources */,
+				ABE91E5F27F56F750047D600 /* HelpPageView.swift in Sources */,
 				ABE91E4C27F3F6070047D600 /* ScoreCounter.swift in Sources */,
 				ABC96C0627F2296E00B861ED /* AnimationView.swift in Sources */,
 				ABC96C0C27F23BA500B861ED /* States.swift in Sources */,
@@ -377,6 +384,7 @@
 				ABE91E4E27F3F64A0047D600 /* ScoreCounterDot.swift in Sources */,
 				ABE91E3927F3E05F0047D600 /* PlayerView.swift in Sources */,
 				ABE91E5B27F4DCE30047D600 /* GamePhysics.swift in Sources */,
+				ABE91E6127F571E60047D600 /* TextAreaView.swift in Sources */,
 				ABE91E5327F3FC5F0047D600 /* PlayerSprite.swift in Sources */,
 				ABE91E4927F3F5890047D600 /* Goal.swift in Sources */,
 				ABC96C0A27F23B6900B861ED /* GameLobbyView.swift in Sources */,
