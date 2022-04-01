@@ -153,7 +153,7 @@ class Physics: ObservableObject{
             states.ballVelocity = simd_reflect(incident, normal)
             Haptics.shared.play(.soft)
         }
-        if(by < 30){
+        if(by < 60){
             incident = self.states.ballVelocity
             normal = simd_float2(x: 0, y: 1)
             states.ballVelocity = simd_reflect(incident, normal)
