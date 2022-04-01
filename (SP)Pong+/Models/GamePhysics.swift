@@ -132,6 +132,7 @@ class Physics: ObservableObject{
                     newV.y = Float(self.states.ballSpeed) * -1
         
                 }
+        Haptics.shared.play(.medium)
         states.ballVelocity = newV
     }
     
@@ -144,21 +145,25 @@ class Physics: ObservableObject{
             incident = self.states.ballVelocity
             normal = simd_float2(x: 1, y: 0)
             states.ballVelocity = simd_reflect(incident, normal)
+            Haptics.shared.play(.soft)
         }
         if(bx > bounds.width-30){
             incident = self.states.ballVelocity
             normal = simd_float2(x: -1, y: 0)
             states.ballVelocity = simd_reflect(incident, normal)
+            Haptics.shared.play(.soft)
         }
         if(by < 30){
             incident = self.states.ballVelocity
             normal = simd_float2(x: 0, y: 1)
             states.ballVelocity = simd_reflect(incident, normal)
+            Haptics.shared.play(.soft)
         }
         if(by > bounds.height-60){
             incident = self.states.ballVelocity
             normal = simd_float2(x: 0, y: -1)
             states.ballVelocity = simd_reflect(incident, normal)
+            Haptics.shared.play(.soft)
         }
     }
     
@@ -170,6 +175,7 @@ class Physics: ObservableObject{
            
              states.ballPosition = CGPoint(x: bounds.width/2, y: bounds.height/2.5)
              states.endRound(scored: 1)
+             Haptics.shared.notify(.success)
              
             
     
@@ -187,7 +193,8 @@ class Physics: ObservableObject{
            
             states.ballPosition = CGPoint(x: bounds.width/2, y: bounds.height/1.5)
             states.endRound(scored: 2)
-    
+            Haptics.shared.notify(.error)
+            
             if(states.playerList[1].score == states.rounds){
                 states.endGame(winner: 2)
             }

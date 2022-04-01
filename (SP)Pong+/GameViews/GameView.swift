@@ -76,12 +76,14 @@ struct GameView: View {
                 timerText = Int(self.roundTimer/40)+1
                 if(self.roundTimer <= 0){
                     states.newRound()
-                    
+                    Haptics.shared.play(.heavy)
                 }
             }
             else{
                 if(!self.states.gamePaused) {self.roundTimer = 120}
             }
+        }.onChange(of: timerText){_ in
+            Haptics.shared.play(.rigid)
         }
     }
 }

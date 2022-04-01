@@ -22,6 +22,7 @@ struct GameOptions: View{
                 Slider(value: $rounds, in: 1...10).accentColor(.cyan).padding().onChange(of: rounds){
                     num in
                     states.rounds = Int(rounds)
+                    
                 }
             }
             Text("Ball Speed: \(Int(states.ballSpeed))").font(.system(size: 20, design: .rounded))
@@ -31,11 +32,18 @@ struct GameOptions: View{
                     states.ballSpeed = Int(ballSpeed)
                 }
             }
-            
+                            
         }.onAppear(){
             ballSpeed = Double(states.ballSpeed)
             rounds = Double(states.rounds)
         }
+        .onChange(of: states.rounds){ _ in
+            Haptics.shared.play(.soft)
+        }
+        .onChange(of: states.ballSpeed){ _ in
+            Haptics.shared.play(.soft)
+        }
+
             
     }
     

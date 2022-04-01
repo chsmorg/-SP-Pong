@@ -37,6 +37,7 @@
 		ABE91E6527F638110047D600 /* BotControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E6427F638110047D600 /* BotControls.swift */; };
 		ABE91E6A27F65F8B0047D600 /* InGameOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E6927F65F8B0047D600 /* InGameOptions.swift */; };
 		ABE91E6C27F66F840047D600 /* GameCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E6B27F66F840047D600 /* GameCircle.swift */; };
+		ABE91E6E27F675BF0047D600 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE91E6D27F675BF0047D600 /* Haptics.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		ABE91E6427F638110047D600 /* BotControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotControls.swift; sourceTree = "<group>"; };
 		ABE91E6927F65F8B0047D600 /* InGameOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InGameOptions.swift; sourceTree = "<group>"; };
 		ABE91E6B27F66F840047D600 /* GameCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCircle.swift; sourceTree = "<group>"; };
+		ABE91E6D27F675BF0047D600 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 			children = (
 				ABE91E5A27F4DCE30047D600 /* GamePhysics.swift */,
 				ABE91E6427F638110047D600 /* BotControls.swift */,
+				ABE91E6D27F675BF0047D600 /* Haptics.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				ABE91E5B27F4DCE30047D600 /* GamePhysics.swift in Sources */,
 				ABE91E6127F571E60047D600 /* TextAreaView.swift in Sources */,
 				ABE91E5327F3FC5F0047D600 /* PlayerSprite.swift in Sources */,
+				ABE91E6E27F675BF0047D600 /* Haptics.swift in Sources */,
 				ABE91E4927F3F5890047D600 /* Goal.swift in Sources */,
 				ABC96C0A27F23B6900B861ED /* GameLobbyView.swift in Sources */,
 				ABC96C0827F23ADD00B861ED /* Player.swift in Sources */,

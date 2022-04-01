@@ -62,7 +62,7 @@ class ConnectedPlayer: ObservableObject{
     }
     func setDif(){
         self.difficulty-=1
-        if(self.difficulty < 0){
+        if(self.difficulty == 0){
             self.difficulty = 3
         }
     }

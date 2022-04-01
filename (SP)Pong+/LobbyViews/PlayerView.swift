@@ -39,13 +39,13 @@ struct Player: View {
                         self.player.setDif()
                         switch self.player.difficulty{
                         case 3:
-                            color = Color(.red)
+                            color = Color(.green)
                             dif = "Easy"
                         case 2:
                             color = Color(.yellow)
                             dif = "Medium"
                         default:
-                            color = Color(.green)
+                            color = Color(.red)
                             dif = "Hard"
                         }
                         
